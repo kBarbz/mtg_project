@@ -45,9 +45,11 @@ label {
 }
 
 .boxes {
+  padding-left: 0px;
   padding-right: 0px;
 }
 
 .box {
   padding-left: 0px;
+  padding-right: 0px;
 }

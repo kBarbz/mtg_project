@@ -1,40 +1,3 @@
-{% extends "base.html" %}
-{% load static %}
-{% block head %}
-<link rel="stylesheet" href="{% static 'css/random_number.css' %}">
-<script>
-function post_flip_data(){
-  data = {
-    flips: $('#flips').val(),
-    thumb: $('#thumb').is(':checked')
-  }
-  $.post('/home_coin_flip', data, function (data, status){
-    if (data){
-      $('#my_coin_flips').html("")
-      for (let i = 0; i < data.length; i++){
-        $('#my_coin_flips').append("Result #"+(i+1)+": "+ data[i] + "<br>")
-      }
-    }
-  });
-}
-function post_roll_data(){
-  data = {
-    rolls: $('#rolls').val(),
-    size: $('#size').val()
-  }
-  $.post('/home_dice_roll', data, function (data, status){
-    if (data){
-      $('#my_coin_flips').html("")
-      for (let i = 0; i < data.length; i++){
-        $('#my_coin_flips').append("Result #"+(i+1)+": "+ data[i] + "<br>")
-      }
-    }
-  });
-}
-</script>
-{% endblock %}
-
-{% block page_content %}
 <div class="col-md-6">
   <div class="container">
     <h1>Dice or Coin</h1>
@@ -89,4 +52,3 @@ function post_roll_data(){
   </div>
 
 </div>
-{% endblock %}
