@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/random_number.css' %}">
+<script>
+function post_flip_data(){
+  data = {
+    flips: $('#flips').val(),
+    thumb: $('#thumb').is(':checked')
+  }
+  $.post('/home_coin_flip', data, function (data, status){
+    if (data){
+      $('#my_coin_flips').html("")
+      for (let i = 0; i < data.length; i++){
+        $('#my_coin_flips').append("Result #"+(i+1)+": "+ data[i] + "<br>")
+      }
+    }
+  });
+}
+function post_roll_data(){
+  data = {
+    rolls: $('#rolls').val(),
+    size: $('#size').val()
+  }
+  $.post('/home_dice_roll', data, function (data, status){
+    if (data){
+      $('#my_coin_flips').html("")
+      for (let i = 0; i < data.length; i++){
+        $('#my_coin_flips').append("Result #"+(i+1)+": "+ data[i] + "<br>")
+      }
+    }
+  });
+}
+</script>
+{% endblock %}
+
+{% block page_content %}
+<div class="col-md-6">
+  <div class="container">
+    <h1>Dice or Coin</h1>
+  </div>
+  <div id="rand_tab" class="container">
+    <ul  class="nav nav-pills">
+			<li>
+        <a class="active" href="#dice" data-toggle="tab">Dice Roll</a>
+			</li>
+			<li><a href="#coin" data-toggle="tab">Coin Flip</a>
+			</li>
+    </ul>
+    <div class="row">
+      <div class="col-md-5 boxes">
+			<div class="tab-content clearfix">
+			  <div class="tab-pane active" id="dice">
+          <form action="javascript:void(0);" method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="rolls">Rolls:</label>
+                  {{ dice_form.rolls }}
+              </div>
+              <div class="form-group">
+                  <label for="size">Size: </label>
+                  {{ dice_form.size }}
+              </div>
+              <button id="dice_btn" type="submit" class="btn btn-primary" onclick="post_roll_data()">Submit</button>
+          </form>
+          {{my_int}}
+				</div>
+				<div class="tab-pane" id="coin">
+          <form action="javascript:void(0);" method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="flips ">Flips:</label>
+                  {{ coin_form.flips }}
+              </div>
+              <div class="form-group">
+                <label for="thumb">Thumb?</label>
+                  {{ coin_form.thumb }}
+              </div>
+              <button id="coin_btn" type="submit" class="btn btn-primary"  onclick="post_flip_data()">Submit</button>
+          </form>
+				</div>
+			</div>
+      </div>
+      <div class="col-md-6 box">
+        <div id="my_coin_flips">
+
+        </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
