@@ -2,7 +2,7 @@
 let players = 0;
 function add_player(){
   players++;
-  $("#players").prepend("<div class='col' id='player_div_"+players+"'> <button type='submit' class='btn btn-primary player_btn' onclick='add_dmg("+players+")'>+</button> <p onclick='color_change("+players+")' class='player_dmg' id='player_"+players+"'> 0 </p> <button type='submit' class='btn btn-primary player_btn'  onclick='sub_dmg("+players+")'>-</button> </div>");
+  $("#players").prepend("<div class='col grey_div' id='player_div_"+players+"'> <button type='submit' class='btn btn-primary player_btn' onclick='add_dmg("+players+")'>+</button> <p onclick='color_change("+players+")' class='player_dmg' id='player_"+players+"'> 0 </p> <button type='submit' class='btn btn-primary player_btn'  onclick='sub_dmg("+players+")'>-</button> </div>");
   if (players > 5) {
     $("#add_player").remove();
   }
@@ -18,8 +18,18 @@ function sub_dmg(player){
 }
 
 function color_change(player){
-  if
-  $("#player_div_"+player).css('background-color', '#E81500');
-  $("#player_div_"+player).css('background-color', '#FF5E26');
+
+  if ($("#player_div_"+player).css('background-color') == 'rgb(204, 204, 204)')
+    {
+      $("#player_div_"+player).css('background-color', 'rgb(200, 18, 0)');
+    }
+    else if ($("#player_div_"+player).css('background-color') == 'rgb(200, 18, 0)')
+    {
+      $("#player_div_"+player).css('background-color', 'rgb(255, 108, 53)');
+    }
+    else if ($("#player_div_"+player).css('background-color') == 'rgb(255, 108, 53)')
+    {
+
+    }
 }
 </script>
