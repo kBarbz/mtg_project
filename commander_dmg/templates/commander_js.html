@@ -1,0 +1,25 @@
+<script>
+let players = 0;
+function add_player(){
+  players++;
+  $("#players").prepend("<div class='col' id='player_div_"+players+"'> <button type='submit' class='btn btn-primary player_btn' onclick='add_dmg("+players+")'>+</button> <p onclick='color_change("+players+")' class='player_dmg' id='player_"+players+"'> 0 </p> <button type='submit' class='btn btn-primary player_btn'  onclick='sub_dmg("+players+")'>-</button> </div>");
+  if (players > 5) {
+    $("#add_player").remove();
+  }
+}
+
+function add_dmg(player){
+  curr = parseInt($("#player_"+player).html())
+  $("#player_"+player).text(curr+1)
+}
+function sub_dmg(player){
+  curr = parseInt($("#player_"+player).html())
+  $("#player_"+player).text(curr-1)
+}
+
+function color_change(player){
+  if
+  $("#player_div_"+player).css('background-color', '#E81500');
+  $("#player_div_"+player).css('background-color', '#FF5E26');
+}
+</script>

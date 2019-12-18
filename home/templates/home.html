@@ -2,7 +2,11 @@
 {% load static %}
 {% block head %}
 {% include "rand_num_js.html" %}
+{% include "commander_js.html" %}
 {% endblock %}
 {% block page_content %}
+<div class="row">
 {% include "random_number.html" %}
+{% include "commander.html" %}
+</div>
 {% endblock %}

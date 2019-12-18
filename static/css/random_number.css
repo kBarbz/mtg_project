@@ -53,3 +53,26 @@ label {
   padding-left: 0px;
   padding-right: 0px;
 }
+
+#com-dmg {
+  height: 100%;
+}
+
+.add_player {
+  font-size: 80px;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+}
+
+.player_dmg {
+  font-size: 30px;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+}
+
+.player_btn {
+  display: block;
+  margin: 0 auto;
+}
