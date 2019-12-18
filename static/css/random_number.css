@@ -25,11 +25,11 @@
 }
 
 #thumb {
-  height: 30px;
+  height: 15px;
   display: inline;
   position: absolute;
   margin: auto;
-  width: 40%;
+  width: 70%;
 }
 
 label {
@@ -79,4 +79,13 @@ label {
 
 .grey_div{
   background-color: #CCCCCC;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
