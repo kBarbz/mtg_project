@@ -25,7 +25,7 @@ SECRET_KEY = 'htf!h600(^^3g@#va4*86br!4mq)f-3oeqhu&fn9+&9_ayet8g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mtg-application.herokuapp.com']
 
 
 # Application definition
