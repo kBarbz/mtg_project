@@ -1,0 +1,121 @@
+<div class='tracker-container'>
+
+<div id="tracker-info-section">
+	<div class="section-content upkeep active">
+    <div class="row">
+      <div class="col-4">
+        <p> Untap </p>
+        <textarea class="text-input" id="uptap"></textarea>
+      </div>
+      <div class="col-4">
+        <p> Upkeep </p>
+        <textarea class="text-input" id="upkeep"></textarea>
+      </div>
+      <div class="col-4">
+        <p> Draw </p>
+        <textarea class="text-input" id="draw"></textarea>
+      </div>
+    </div>
+	</div>
+
+	<div class="section-content main1">
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-4">
+        <p> Pre-Combat </p>
+        <textarea class="text-input" id="upkeep"></textarea>
+      </div>
+      <div class="col-4">
+      </div>
+	</div>
+</div>
+
+	<div class="section-content combat">
+    <div class="row">
+      <div class="col-4">
+        <p> Pre-combat </p>
+        <textarea class="text-input" id="uptap"></textarea>
+      </div>
+      <div class="col-4">
+        <p> Declare Attacks </p>
+        <textarea class="text-input" id="upkeep"></textarea>
+      </div>
+      <div class="col-4">
+        <p> Damage </p>
+        <textarea class="text-input" id="draw"></textarea>
+      </div>
+	</div>
+</div>
+
+	<div class="section-content main2">
+    <div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+      <p> Post-Combat </p>
+      <textarea class="text-input" id="upkeep"></textarea>
+    </div>
+    <div class="col-4">
+    </div>
+    </div>
+	</div>
+
+	<div class="section-content endstep">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-4">
+        <p> End Step </p>
+        <textarea class="text-input" id="uptap"></textarea>
+      </div>
+      <div class="col-4">
+        <p> Cleanup </p>
+        <textarea class="text-input" id="upkeep"></textarea>
+      </div>
+      <div class="col-2"></div>
+	</div>
+</div>
+
+  <div id="turn-tracker-container">
+  	<ul>
+  		<li class="step step01 active"><div class="step-inner">Untap, Upkeep, Draw</div></li>
+  		<li class="step step02"><div class="step-inner">Main 1</div></li>
+  		<li class="step step03"><div class="step-inner">Combat</div></li>
+  		<li class="step step04"><div class="step-inner">Main 2</div></li>
+  		<li class="step step05"><div class="step-inner">Endstep</div></li>
+  	</ul>
+
+  </div>
+</div>
+
+</div>
+
+<script>
+
+  $(".step").click( function() {
+  	$(this).addClass("active");
+  	$(this).nextAll().removeClass("active");
+    $(this).prevAll().removeClass("active");
+  });
+
+$(".step01").click( function() {
+	$(".upkeep").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$(".main1").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$(".combat").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$(".main2").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$(".endstep").addClass("active").siblings().removeClass("active");
+});
+
+</script>

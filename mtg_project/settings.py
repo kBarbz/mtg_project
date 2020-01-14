@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'dice',
     'home',
     'commander_dmg',
+    'tracker',
 ]
 
 MIDDLEWARE = [
